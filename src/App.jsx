@@ -496,9 +496,12 @@ function Avatar({ pub, size = 44 }) {
 
 function LoginPage({ setUser, setPage }) {
   const [step, setStep] = useState(1);
-  const [country, setCountry] = useState(null);
-  const [selected, setSelected] = useState(null);
-  const [search, setSearch] = useState('');
+const [country, setCountry] = useState(null);
+const [selected, setSelected] = useState(null);
+const [search, setSearch] = useState('');
+const [orgPwd, setOrgPwd] = useState('');
+const [orgError, setOrgError] = useState(false);
+const [showOrgPwd, setShowOrgPwd] = useState(false);
 
   const counts = { chile: 37, spain: 10, colombia: 10, italy: 20 };
   const pubs = country
@@ -586,21 +589,39 @@ function LoginPage({ setUser, setPage }) {
                 </button>
               </>
             )}
-            <button
-              className="btn-org"
-              onClick={() => {
-                setUser({
-                  id: 'org',
-                  name: 'Organizadora',
-                  country: 'org',
-                  initials: 'OR',
-                  company: 'Feria del Libro',
-                });
-                setPage('dashboard');
-              }}
-            >
-              ⚙ Ingresar como Organizadora
-            </button>
+           {!showOrgPwd ? (
+  <button className="btn-org" onClick={()=>setShowOrgPwd(true)}>
+    ⚙ Ingresar como Organizadora
+  </button>
+) : (
+  <div style={{marginTop:10,padding:16,border:'1px solid #1E1E2A',borderRadius:8,background:'#0F0F16'}}>
+    <div style={{fontSize:11,letterSpacing:2,textTransform:'uppercase',color:'#888',marginBottom:8}}>Contraseña</div>
+    <input
+      type="password"
+      className="search-box"
+      placeholder="Ingresa la contraseña..."
+      value={orgPwd}
+      onChange={e=>{setOrgPwd(e.target.value);setOrgError(false)}}
+      style={{marginBottom:8}}
+    />
+    {orgError && <div style={{color:'#FC8181',fontSize:12,marginBottom:8}}>⚠ Contraseña incorrecta</div>}
+    <div style={{display:'flex',gap:8}}>
+      <button className="btn-org" style={{flex:1,marginTop:0}} onClick={()=>{setShowOrgPwd(false);setOrgPwd('');setOrgError(false)}}>
+        Cancelar
+      </button>
+      <button className="btn-primary" style={{flex:1,padding:'10px'}} onClick={()=>{
+        if(orgPwd==='BCBF2026COCLITES'){
+          setUser({id:'org',name:'Organizadora',country:'org',initials:'OR',company:'Feria del Libro'});
+          setPage('dashboard');
+        } else {
+          setOrgError(true);
+        }
+      }}>
+        Entrar →
+      </button>
+    </div>
+  </div>
+)}
           </>
         )}
       </div>
