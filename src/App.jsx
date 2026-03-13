@@ -78,6 +78,7 @@ const PUBS = [
   mk('cl35', 'chile', 'Hortensia Vidal', 'Don Bosco Ediciones', G[2], G[0]),
   mk('cl36', 'chile', 'Inés Gutiérrez', 'Del Nuevo Extremo', G[5], G[0]),
   mk('cl37', 'chile', 'Juana Romero', 'Ediciones Altazor', G[1], G[7]),
+  mk('cl38','chile','Alberto Gorgone','Editore Cileno',G[0],G[3]),
   mk('es1', 'spain', 'María García', 'Anagrama', G[0], G[3]),
   mk('es2', 'spain', 'Ana Martínez', 'Tusquets Editores', G[0], G[4]),
   mk('es3', 'spain', 'Laura Sánchez', 'Siruela', G[6], G[0]),
@@ -88,6 +89,7 @@ const PUBS = [
   mk('es8', 'spain', 'Mercedes Álvarez', 'Páginas de Espuma', G[0], G[1]),
   mk('es9', 'spain', 'Elena Herrero', 'Alianza Editorial', G[3], G[9]),
   mk('es10', 'spain', 'Cristina Domínguez', 'Acantilado', G[0], G[3]),
+  mk('es11','spain','Gaetano Scarano','Editore Spagnolo',G[0],G[3]),
   mk('co1', 'colombia', 'Marcela Ríos', 'Babel Libros', G[2], G[0]),
   mk('co2', 'colombia', 'Diana Castro', 'Laguna Libros', G[0], G[1]),
   mk(
@@ -105,6 +107,7 @@ const PUBS = [
   mk('co8', 'colombia', 'Margarita Pardo', 'Planeta Colombia', G[0], G[5]),
   mk('co9', 'colombia', 'Sofía Zapata', 'Panamericana Editorial', G[2], G[0]),
   mk('co10', 'colombia', 'Liliana Cárdenas', 'Común Presencia', G[1], G[0]),
+  mk('co11','colombia','Alice Rifelli','Editrice Colombiana',G[0],G[3]),
   mk('it1', 'italy', 'Sofia Russo', 'Einaudi', G[0], G[3]),
   mk('it2', 'italy', 'Giulia Ferrari', 'Mondadori', G[0], G[5]),
   mk('it3', 'italy', 'Francesca Esposito', 'Adelphi', G[0], G[9]),
@@ -125,6 +128,7 @@ const PUBS = [
   mk('it18', 'italy', 'Stefania Costa', 'Bollati Boringhieri', G[9], G[3]),
   mk('it19', 'italy', 'Rossella Giordano', 'Guanda', G[0], G[1]),
   mk('it20', 'italy', 'Emanuela Bruno', 'Oblomov Edizioni', G[0], G[6]),
+  mk('it21','italy','Paolo Primavera','Editore Italiano',G[0],G[3]),
 ];
 
 // ===================== CONFIG =====================
